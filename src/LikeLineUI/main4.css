@@ -1,0 +1,68 @@
+/* balloon common */                /* ■■■ 吹き出しの共通設定です。■■■ */
+div.bln-wrapper {               /* 吹き出しの領域です。 */
+    width: 600px;                   /* 吹き出し領域の幅です。 */
+    margin: 15px auto;              /* 上下に 15px 距離をとり、左右位置を中心にします。 */
+}
+div.bln-wrapper::after {        /* clearfix で wrapper 内で使用された float を解除します。 */
+    clear: both;
+    content: "";
+    display: block;
+    line-height: 0;
+}
+.bln-left img,
+.bln-right img {                 /* アイコンです。 */
+    clear: both;                    /* 前の吹き出しの float を解除します。 */
+    margin-top:    15px;            /* 吹き出し同士の距離と位置合わせします。 */
+    margin-bottom: 15px;            /* 吹き出し同士の距離と位置合わせします。 */
+}
+.bln-left p,
+.bln-right p {                   /* 吹き出しの本体です。 */
+    background-color: #88dd88;
+    position: relative;             /* 三角部分の原点になるよう position を指定します。 */
+    min-width: 10%;                 /* 最小幅を指定します。 */
+    max-width: 70%;                 /* 最大幅を指定します。 */
+    margin: 15px 0;                 /* 吹き出し同士の距離を設定します。 */
+    padding: 13px;                  /* 吹き出し枠とテキストの隙間です。 */
+    border-radius: 10px;            /* 角を丸めます。 */
+}
+.bln-left p::before,
+.bln-right p::before {           /* 吹き出しの三角部分です。 */
+    content: "";                    /* ::before を表示するのに必要です。 */
+    display: block;                 /* div などと同様の要素にします。 */
+    position: absolute;             /* 親要素に対して絶対位置を指定します。 */
+    top: 10px;                      /* 親要素の上から 12px 下げます。 */
+    width: 0;                       /* border で三角を作るハックです。 */
+    height: 0;                      /* border で三角を作るハックです。 */
+    border: 12px solid transparent; /* 三角の基本設定をします。 */
+}
+/* balloon left */                  /* ■■■左の吹き出しの設定です。■■■ */
+.bln-left img {                  /* アイコンです。 */
+    float: left;                    /* 左に寄せます。 */
+    margin-right: 10px;             /* 本体の設定上、本体がアイコンに食い込むので margin を設定します。 */
+}
+.bln-left p {                    /* 吹き出しの本体です。 */
+    float: left;                    /* 左に寄せます。 */
+    background-color: #8d8;         /* 背景色を設定します。 */
+}
+.bln-left p::before {            /* 吹き出しの三角部分です。 */
+    left: -22px;                    /* 原点から左に 27px はみ出します。 */
+    border-right: 12px solid #8d8;  /* border で三角を作るハックです。 */
+}
+/* balloon right */                 /* ■■■右の吹き出しの設定です。■■■ */
+.bln-right img {
+    float: right;
+    margin-left: 10px;
+}
+.bln-right p {
+    float: right;
+    background-color: #aad;
+}
+.bln-right p::before {
+    right: -22px;
+    border-left: 12px solid #aad;
+}
+
+.question {
+    width: 600px;                   /* 吹き出し領域の幅です。 */
+    margin: 15px auto;              /* 上下に 15px 距離をとり、左右位置を中心にします。 */
+}
