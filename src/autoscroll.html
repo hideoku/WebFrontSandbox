@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script   src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+    <script type="text/javascript">
+
+        function autoScroll() {
+
+            // 1. pure JavaScript
+//            document.body.scrollTop = document.body.scrollHeight;
+
+            // 2. pure JavaScript
+//            window.scrollTo(0, document.body.scrollHeight) ;
+
+            // 3. jquery でアニメーション付きで自動スクロール
+            $('html,body').animate({ scrollTop: document.body.scrollHeight }, 1000);  // １秒かけてスクロールする
+        }
+
+        function addContent() {
+            $("#button2").after('<div><p>かかか</p><p>いいいい</p><p>うううう</p></div>');
+        }
+
+    </script>
+
+</head>
+<body >
+
+<button onclick="autoScroll()">テスト</button>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<div>
+    <p>ああああ</p>
+    <p>いいいい</p>
+    <p>うううう</p>
+</div>
+
+<button id="button2" onclick="addContent();autoScroll()">テスト2</button>
+
+</body>
+</html>
